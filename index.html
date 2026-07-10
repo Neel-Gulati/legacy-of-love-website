@@ -276,6 +276,40 @@
   }
   .step:first-child .step-connector{ display:none; }
 
+  /* ---------- Our Board ---------- */
+  .board-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .board-card{
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    text-align:center;
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .board-card:hover{ transform: translateY(-6px); box-shadow: 0 24px 40px -24px rgba(107,87,68,0.35); }
+  .board-photo{
+    width: 108px; height: 108px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 18px;
+    border: 3px solid var(--cream-deep);
+    background: var(--cream-deep);
+  }
+  .board-card h3{ font-size: 1.15rem; margin-bottom: 4px; }
+  .board-role{
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-bottom: 14px;
+  }
+  .board-bio{ font-size: 0.94rem; color: var(--ink-soft); }
+
   /* ---------- Leaves / whats inside ---------- */
   .items-grid{
     display:grid;
@@ -444,7 +478,7 @@
   @media (max-width: 920px){
     .hero-inner{ grid-template-columns: 1fr; }
     .hero-art{ order:-1; max-width: 340px; margin: 0 auto; }
-    .roots-grid, .branches, .items-grid, .involve-grid, .steps{ grid-template-columns: 1fr; gap: 20px; }
+    .roots-grid, .branches, .items-grid, .board-grid, .involve-grid, .steps{ grid-template-columns: 1fr; gap: 20px; }
     .step{ padding-left: 0; }
     .step-connector{ display:none; }
     .walk-inner, .request-inner{ grid-template-columns: 1fr; gap: 30px; }
@@ -479,6 +513,7 @@
     <nav class="links" id="navLinks">
       <a href="#mission">Our Roots</a>
       <a href="#inside">What's Inside</a>
+      <a href="#board">Our Board</a>
       <a href="#request">Request a Package</a>
       <a href="#involve">Get Involved</a>
       <a href="#contact">Contact</a>
@@ -671,6 +706,68 @@
           <span class="chip">Other degenerative diagnoses</span>
         </div>
         <p style="margin-top:22px;">Don't see your diagnosis listed? Reach out anyway — every request is reviewed individually, and our list is always growing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR BOARD -->
+  <section id="board">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Our board</p>
+        <h2>The people behind Legacy of Love.</h2>
+        <p>A small team of volunteers who put every package together and keep this organization running.</p>
+      </div>
+      <div class="board-grid">
+
+        <!-- EDIT HERE: Founder -->
+        <div class="board-card reveal">
+          <img class="board-photo" src="board-founder.jpg" alt="Photo of the Founder">
+          <h3>Full Name</h3>
+          <p class="board-role">Founder</p>
+          <p class="board-bio">Write a short bio here — a sentence or two about who they are and why they started Legacy of Love.</p>
+        </div>
+
+        <!-- EDIT HERE: Vice President -->
+        <div class="board-card reveal">
+          <img class="board-photo" src="board-vp.jpg" alt="Photo of the Vice President">
+          <h3>Full Name</h3>
+          <p class="board-role">Vice President</p>
+          <p class="board-bio">Write a short bio here — a sentence or two about their role and background.</p>
+        </div>
+
+        <!-- EDIT HERE: Secretary -->
+        <div class="board-card reveal">
+          <img class="board-photo" src="board-secretary.jpg" alt="Photo of the Secretary">
+          <h3>Full Name</h3>
+          <p class="board-role">Secretary</p>
+          <p class="board-bio">Write a short bio here — a sentence or two about their role and background.</p>
+        </div>
+
+        <!-- EDIT HERE: Treasurer -->
+        <div class="board-card reveal">
+          <img class="board-photo" src="board-treasurer.jpg" alt="Photo of the Treasurer">
+          <h3>Full Name</h3>
+          <p class="board-role">Treasurer</p>
+          <p class="board-bio">Write a short bio here — a sentence or two about their role and background.</p>
+        </div>
+
+        <!-- EDIT HERE: Event Coordinator -->
+        <div class="board-card reveal">
+          <img class="board-photo" src="board-events.jpg" alt="Photo of the Event Coordinator">
+          <h3>Full Name</h3>
+          <p class="board-role">Event Coordinator</p>
+          <p class="board-bio">Write a short bio here — a sentence or two about their role and background.</p>
+        </div>
+
+        <!-- EDIT HERE: Social Media Manager -->
+        <div class="board-card reveal">
+          <img class="board-photo" src="board-social.jpg" alt="Photo of the Social Media Manager">
+          <h3>Full Name</h3>
+          <p class="board-role">Social Media Manager</p>
+          <p class="board-bio">Write a short bio here — a sentence or two about their role and background.</p>
+        </div>
+
       </div>
     </div>
   </section>
