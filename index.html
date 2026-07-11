@@ -447,6 +447,16 @@
   .involve-card h3{ font-size: 1.24rem; margin-bottom: 12px; }
   .involve-card p{ color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 24px; flex-grow:1; }
 
+  /* ---------- Events / calendar ---------- */
+  .calendar-frame{
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 30px 60px -40px rgba(107,87,68,0.4);
+    background: #fff;
+  }
+  .calendar-frame iframe{ display:block; }
+
   /* ---------- Footer ---------- */
   footer{
     background: var(--bark);
@@ -521,6 +531,7 @@
       <a href="#mission">Our Roots</a>
       <a href="#inside">What's Inside</a>
       <a href="#board">Our Board</a>
+      <a href="#events">Events</a>
       <a href="#request">Request a Package</a>
       <a href="#involve">Get Involved</a>
       <a href="#contact">Contact</a>
@@ -840,6 +851,27 @@
     </div>
   </section>
 
+  <!-- EVENTS -->
+  <section id="events">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Upcoming events</p>
+        <h2>Fundraisers, pack days, and ways to show up in person.</h2>
+        <p>Everything happening next lives on our calendar below — click any event for details.</p>
+      </div>
+      <div class="calendar-frame reveal">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=9a3c22b483e10ee858032e0f0c9f5883948218ef8e0c172409f74b1604f941e1%40group.calendar.google.com&ctz=America%2FChicago"
+          style="border:0"
+          width="100%"
+          height="600"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- REQUEST FORM -->
   <section id="request">
     <div class="wrap request-inner">
@@ -933,6 +965,7 @@
     </div>
   </section>
 
+
 </main>
 
 <footer id="contact">
@@ -950,6 +983,8 @@
         <ul>
           <li><a href="#mission">Our Roots</a></li>
           <li><a href="#inside">What's Inside</a></li>
+          <li><a href="#board">Our Board</a></li>
+          <li><a href="#events">Events</a></li>
           <li><a href="#request">Request a Package</a></li>
           <li><a href="#involve">Get Involved</a></li>
         </ul>
