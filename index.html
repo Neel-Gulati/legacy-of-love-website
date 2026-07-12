@@ -88,7 +88,8 @@
   .nav-inner{
     display:flex;
     align-items:center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 44px;
     padding: 30px 32px;
     max-width: 1160px;
     margin: 0 auto;
@@ -98,6 +99,7 @@
     align-items:center;
     gap: 12px;
     text-decoration:none;
+    flex-shrink: 0;
   }
   .brand img{ height: 40px; width:auto; }
   .brand-word{
@@ -127,7 +129,7 @@
   }
   nav.links a:hover{ color: var(--burgundy); }
 
-  .header-actions{ display:flex; align-items:center; gap: 10px; }
+  .header-actions{ display:flex; align-items:center; gap: 10px; margin-left: auto; }
 
   .btn{
     display:inline-flex;
