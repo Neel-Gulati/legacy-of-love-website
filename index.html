@@ -89,7 +89,7 @@
     display:flex;
     align-items:center;
     justify-content: space-between;
-    padding: 22px 32px;
+    padding: 30px 32px;
     max-width: 1160px;
     margin: 0 auto;
   }
@@ -111,6 +111,8 @@
 
   nav.links{
     display:flex;
+    flex-wrap: wrap;
+    row-gap: 8px;
     gap: 20px;
     list-style:none;
     font-size: 0.84rem;
@@ -457,6 +459,42 @@
   }
   .calendar-frame iframe{ display:block; }
 
+  /* ---------- Interest toggle chips (volunteer form) ---------- */
+  .interest-chips{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .chip-toggle{
+    position: relative;
+    display:inline-flex;
+    align-items:center;
+    padding: 11px 20px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--cream);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    cursor: pointer;
+    user-select: none;
+    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .15s ease;
+  }
+  .chip-toggle:hover{ border-color: var(--rose); color: var(--ink); }
+  .chip-toggle input{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .chip-toggle.selected{
+    background: var(--burgundy);
+    border-color: var(--burgundy);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
   /* ---------- Footer ---------- */
   footer{
     background: var(--bark);
@@ -492,7 +530,7 @@
   }
 
   /* ---------- Responsive ---------- */
-  @media (max-width: 1080px){
+  @media (max-width: 1240px){
     .hero-inner{ grid-template-columns: 1fr; }
     .hero-art{ order:-1; max-width: 340px; margin: 0 auto; }
     .roots-grid, .branches, .items-grid, .board-grid, .involve-grid, .steps{ grid-template-columns: 1fr; gap: 20px; }
@@ -986,21 +1024,26 @@
           </div>
           <div class="field">
             <label>How would you like to help?</label>
-            <div style="display:flex; flex-direction:column; gap:10px; margin-top:6px;">
-              <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.95rem; color:var(--ink);">
-                <input type="checkbox" name="volInterest" value="Packing care packages"> Packing care packages
+            <div class="interest-chips">
+              <label class="chip-toggle">
+                <input type="checkbox" name="volInterest" value="Packing care packages">
+                <span>Packing care packages</span>
               </label>
-              <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.95rem; color:var(--ink);">
-                <input type="checkbox" name="volInterest" value="Event support"> Event support
+              <label class="chip-toggle">
+                <input type="checkbox" name="volInterest" value="Event support">
+                <span>Event support</span>
               </label>
-              <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.95rem; color:var(--ink);">
-                <input type="checkbox" name="volInterest" value="Social media"> Social media
+              <label class="chip-toggle">
+                <input type="checkbox" name="volInterest" value="Social media">
+                <span>Social media</span>
               </label>
-              <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.95rem; color:var(--ink);">
-                <input type="checkbox" name="volInterest" value="Fundraising"> Fundraising
+              <label class="chip-toggle">
+                <input type="checkbox" name="volInterest" value="Fundraising">
+                <span>Fundraising</span>
               </label>
-              <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.95rem; color:var(--ink);">
-                <input type="checkbox" name="volInterest" value="Other"> Other / not sure yet
+              <label class="chip-toggle">
+                <input type="checkbox" name="volInterest" value="Other">
+                <span>Other / not sure yet</span>
               </label>
             </div>
           </div>
@@ -1120,6 +1163,13 @@
   const volForm = document.getElementById('volunteerForm');
   const volSuccess = document.getElementById('volunteerSuccess');
   const volSubmitBtn = volForm.querySelector('button[type="submit"]');
+
+  // toggle chip highlight when its checkbox is checked/unchecked
+  volForm.querySelectorAll('.chip-toggle input').forEach(cb => {
+    cb.addEventListener('change', () => {
+      cb.closest('.chip-toggle').classList.toggle('selected', cb.checked);
+    });
+  });
 
   volForm.addEventListener('submit', (e) => {
     e.preventDefault();
